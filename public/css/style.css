@@ -10,6 +10,10 @@ body {
     background-color: #cfd2dd;
 }
 
+ul {
+    list-style: none;
+}
+
 
 /* Join Page */
 
@@ -53,7 +57,7 @@ body {
 }
 
 #username::placeholder {
-    color: #fff;
+    color: rgb(231, 230, 230);
 }
 
 .join-main select {
@@ -143,6 +147,7 @@ a {
     overflow-y: scroll;
     border-bottom: 2px solid #355ef2;
     background: #10235c;
+    color: #fff;
 }
 
 .chat-messages .message {
@@ -156,13 +161,13 @@ a {
 .chat-messages .message .meta {
     font-size: 15px;
     font-weight: bold;
-    color: #fff;
-    opacity: 0.7;
+    color: #0b1d53;
     margin-bottom: 7px;
 }
 
 .chat-messages .message .meta span {
-    color: #072cb1;
+    color: #0225a3;
+    opacity: 0.8;
 }
 
 .chat-form-container {
@@ -182,10 +187,11 @@ a {
     background-color: #10235c;
     border: #355ef2 solid 2px;
     outline: none;
+    color: #fff;
 }
 
 #msg::placeholder {
-    color: #fff;
+    color: rgb(231, 230, 230);
 }
 
 @media (max-width: 700px) {

@@ -23,16 +23,35 @@
                 <h3><i class="far fa-comments"></i> Channel Name:</h3>
                 <h2 id="channel-name"></h2>
                 <h3><i class="fas fa-users"></i> Users</h3>
-                <ul id="users"></ul>
+                <ul id="users">
+                    <li>Jenny</li>
+                    <li>David</li>
+                    <li>Matt</li>
+                    <li>Lucy</li>
+                    <li>Mike</li>
+                </ul>
             </div>
-            <div class="chat-messages"></div>
+            <div class="chat-messages">
+                <div class="message">
+                    <p class="meta">Jenny <span>9:12pm</span></p>
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, repudiandae.
+                    </p>
+                </div>
+                <div class="message">
+                    <p class="meta">Mike <span>9:15pm</span></p>
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, repudiandae.
+                    </p>
+                </div>
+            </div>
         </main>
         <div class="chat-form-container">
             <form id="chat-form">
                 <input
                     id="msg"
                     type="text"
-                    placeholder="Enter Message"
+                    placeholder="Enter Message..."
                     required
                     autocomplete="off"
                 />
@@ -41,5 +60,7 @@
         </div>
     </div>
     
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
