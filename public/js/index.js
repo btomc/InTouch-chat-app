@@ -1,7 +1,17 @@
 const chatForm = document.getElementById('chat-form')
 const chatMessages = document.querySelector('.chat-messages')
 
+// Get username and channel from URL
+const { username, channel } = Qs.parse(location.search, {
+    ignoreQueryPrefix: true
+})
+
+console.log(username, channel)
+
 const socket = io()
+
+// Join channel
+socket.emit('joinChannel', { username, channel })
 
 // Message from server
 socket.on('message', message => {
