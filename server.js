@@ -26,6 +26,12 @@ io.on('connection', socket => {
 
         // Broadcast when a user connects
         socket.broadcast.to(user.channel).emit('message', formatMessage(botName, `${user.username} has joined the chat`))
+        
+        // Send users and channel info
+        io.to(user.channel).emit('channelUsers', {
+            channel: user.channel,
+            users: getChannelUsers(user.channel)
+        })
     })
 
     
@@ -42,8 +48,13 @@ io.on('connection', socket => {
 
         if(user) {
             io.to(user.channel).emit('message', formatMessage(botName,`${user.username} has left the chat`))
+
+            // Send users and channel info
+            io.to(user.channel).emit('channelUsers', {
+                channel: user.channel,
+                users: getChannelUsers(user.channel)
+            })
         }
-        
     })
 })
 
