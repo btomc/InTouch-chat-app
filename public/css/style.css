@@ -147,14 +147,13 @@ a {
     overflow-y: scroll;
     border-bottom: 2px solid #355ef2;
     background: #10235c;
-    color: #fff;
+    color: #0b1d53;
 }
 
 .chat-messages .message {
     padding: 10px;
     margin-bottom: 15px;
-    background: #355ef2;
-    background: #5072eb;
+    background:  #d6d8e0;
     border-radius: 5px;
     overflow-wrap: break-word;
 }
@@ -162,13 +161,13 @@ a {
 .chat-messages .message .meta {
     font-size: 15px;
     font-weight: bold;
-    color: #0b1d53;
+    color: #355ef2;
     margin-bottom: 7px;
 }
 
 .chat-messages .message .meta span {
     color: #0225a3;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 .chat-form-container {
