@@ -3,7 +3,7 @@ const http = require('http')
 const express = require('express')
 const socketio = require('socket.io')
 const formatMessage = require('./utils/messages')
-const { userJoin, getCurrentUser } = require('./utils/users')
+const { userJoin, getCurrentUser, userLeave, getChannelUsers } = require('./utils/users')
 
 const app = express()
 const server = http.createServer(app)
@@ -38,7 +38,12 @@ io.on('connection', socket => {
 
     // Run when client disconnects
     socket.on('disconnect', () => {
-        io.emit('message', formatMessage(botName,'A user has left the chat'))
+        const user = userLeave(socket.id)
+
+        if(user) {
+            io.to(user.channel).emit('message', formatMessage(botName,`${user.username} has left the chat`))
+        }
+        
     })
 })
 
